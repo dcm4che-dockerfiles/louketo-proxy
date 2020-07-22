@@ -118,13 +118,13 @@ GLOBAL OPTIONS:
 
 You may add a certificate authority (CA) by
 - set environment variable `$UPDATE_CA_CERTIFICATES` to `1` and
-- bind mount your certificate in PEM format into `/etc/pki/ca-trust/source/anchor`.
+- bind mount your certificate in PEM format into `/usr/local/share/ca-certificates` and name it with a `.crt` file extension.
 
 E.g.
 ```bash
-$ docker run -e UPDATE_CA_CERTIFICATES=1 -v /path/to/my-ca-cert.pem:/etc/pki/ca-trust/source/anchor/my-ca-cert.pem \
+$ docker run -e UPDATE_CA_CERTIFICATES=1 -v /path/to/my-ca-cert.pem:/usr/local/share/ca-certificates/my-ca-cert.crt \
    ... \
-   -d dcm4che/louketo-proxy:1.0.0
+   -d dcm4che/keycloak-gatekeeper:9.0.2
 ```
 
 You may pass ´/opt/louketo/templates/forbidden.html.tmpl´ as value of option `--forbidden-page` to display an error page
