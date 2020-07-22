@@ -124,13 +124,13 @@ E.g.
 ```bash
 $ docker run -e UPDATE_CA_CERTIFICATES=1 -v /path/to/my-ca-cert.pem:/usr/local/share/ca-certificates/my-ca-cert.crt \
    ... \
-   -d dcm4che/keycloak-gatekeeper:9.0.2
+   -d dcm4che/louketo-proxy:1.0.0
 ```
 
-You may pass ´/opt/louketo/templates/forbidden.html.tmpl´ as value of option `--forbidden-page` to display an error page
+You may pass `templates/forbidden.html.tmpl` as value of option `--forbidden-page` to display an error page
 on forbidden access:
 ```bash
 $ docker run ... \
    -d dcm4che/louketo-proxy:1.0.0 \
-   --forbidden-page /opt/louketo/templates/forbidden.html.tmpl
+   --forbidden-page templates/forbidden.html.tmpl
 ```
