@@ -12,7 +12,7 @@ LABEL Name=louketo-proxy \
 
 RUN adduser -h /opt/louketo -D -u 1001 louketo
 
-RUN apk add --no-cache libc6-compat ca-certificates curl tar
+RUN apk add --no-cache libc6-compat ca-certificates su-exec curl tar
 
 WORKDIR "/opt/louketo"
 
@@ -25,7 +25,5 @@ COPY certs /etc/certs
 COPY templates ./templates
 
 RUN chown -R louketo:louketo /opt/louketo
-
-USER 1001
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
