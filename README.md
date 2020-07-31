@@ -1,12 +1,13 @@
 ```console
 $ docker run --rm dcm4che/louketo-proxy:1.0.0 help
+NAME:
    louketo-proxy - is a proxy using the keycloak service for auth and authorization
 
 USAGE:
    louketo-proxy [options]
 
 VERSION:
-   v2.3.0 (git+sha: 9eca196-dirty, built: 01-07-2020)
+   1.0.0
 
 AUTHOR:
    Louketo <louketo@googlegroups.com>
